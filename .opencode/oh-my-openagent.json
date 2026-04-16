@@ -1,0 +1,82 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.1,
+      "variant": "max",
+      "ultrawork": {
+        "model": "opencode/minimax-m2.5-free",
+        "variant": "max"
+      },
+      "skills": ["skill-creator", "stack-advisor", "laravel-inertia-react", "laravel-saas", "docker-dev", "pest-testing", "database-pgsql", "redis-queue", "api-rest", "reverb-websocket", "eloquent-queries", "filament-admin", "memory-helper", "context-master", "git-ops", "playwright"]
+    },
+    "hephaestus": {
+      "model": "opencode/minimax-m2.5-free",
+      "variant": "high",
+      "reasoningEffort": "high",
+      "skills": ["laravel-inertia-react", "laravel-saas", "eloquent-queries", "api-rest", "redis-queue", "git-ops"]
+    },
+    "oracle": {
+      "model": "opencode/minimax-m2.5-free",
+      "variant": "high",
+      "temperature": 0.1,
+      "thinking": {
+        "type": "enabled",
+        "budgetTokens": 8192
+      },
+      "permission": {
+        "edit": "deny",
+        "write": "deny"
+      }
+    },
+    "atlas": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.1,
+      "skills": ["skill-creator", "stack-advisor", "git-ops", "memory-helper"]
+    },
+    "prometheus": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.1,
+      "skills": ["skill-creator", "stack-advisor"]
+    },
+    "metis": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.3,
+      "skills": ["stack-advisor"]
+    },
+    "momus": {
+      "model": "opencode/minimax-m2.5-free",
+      "variant": "xhigh",
+      "temperature": 0.1,
+      "skills": ["skill-creator"]
+    },
+    "explore": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.1
+    },
+    "librarian": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.1
+    },
+    "multimodal-looker": {
+      "model": "opencode/minimax-m2.5-free",
+      "temperature": 0.1
+    }
+  },
+  "browser_automation_engine": {
+    "provider": "playwright"
+  },
+  "mcps": {
+    "context7": {
+      "enabled": true
+    },
+    "grep_app": {
+      "enabled": true
+    },
+    "websearch": {
+      "enabled": true
+    }
+  },
+  "disabled_hooks": ["startup-toast"]
+}

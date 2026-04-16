@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/playwright/main/packages/mcp-server/assets/schema.json",
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSER": "chromium"
+      },
+      "description": "Playwright MCP for browser automation"
+    }
+  },
+  "// Note": "This config can be used in Claude Code, Cursor, Windsurf, or other MCP clients",
+  "// Alternative with config file": "npx @playwright/mcp@latest --config playwright.config.json",
+  "configFileOptions": {
+    "browser": {
+      "type": "chromium",
+      "headless": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    "context": {
+      "ignoreHTTPSErrors": true,
+      "javaScriptEnabled": true
+    },
+    "timeout": 30000
+  }
+}
