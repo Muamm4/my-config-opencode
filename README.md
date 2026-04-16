@@ -1,84 +1,93 @@
 # OpenCode Personal Config
 
-Repositório de configuração pessoal do OpenCode com plugins, MCPs e skills customizadas.
+Repositório de configuração pessoal do OpenCode com oh-my-openagent e skills customizadas para o agente Sisyphus.
 
 ## O Que Está Incluído
 
-- **Plugins**: oh-my-openagent + magic-context
-- **MCPs**: context7, grep_app, websearch, playwright
+- **Plugins**: oh-my-openagent + magic-context (instalados globalmente)
 - **Skills**: 17 habilidades customizadas para Laravel, Docker, PostgreSQL, etc.
-- **Configuração de Agentes**: Sisyphus, Hephaestus, Oracle, Atlas, Prometheus
+- **Configuração de Agentes**: Sisyphus (orquestrador principal), Oracle, Prometheus, Metis, Momus
 
-## Estrutura
+## Estrutura Real
 
 ```
-.my-config-opencode/
-├── .opencode/
-│   ├── opencode.json          # Configuração principal
-│   ├── oh-my-openagent.json  # Configuração de agentes
-│   ├── mcp-playwright.json   # Configuração MCP Playwright
-│   ├── agent-browser.json    # Configuração browser
-│   ├── skills/               # 17 skills customizadas
-│   └── package.json          # Dependências do projeto
-├── .playwright-mcp/          # Arquivos temporários do Playwright
-├── example-com.png           # Arquivo de teste
-├── httpbin-org.png           # Arquivo de teste
-└── README.md                 # Este arquivo
+my-config-opencode/
+├── .gitignore                    # Ignora node_modules, temporários
+├── README.md                     # Este arquivo
+├── .opencode/                    # Diretório de configuração do OpenCode
+│   ├── opencode.json             # Configuração principal (plugins, MCPs)
+│   ├── oh-my-openagent.json      # Configuração de agentes e skills
+│   ├── magic-context.jsonc       # Configuração do magic-context
+│   ├── .gitignore                 # Ignora package.json, node_modules
+│   └── skills/                    # 17 skills customizadas
+│       ├── api-rest/
+│       ├── context-master/
+│       ├── css-master/
+│       ├── database-pgsql/
+│       ├── docker-dev/
+│       ├── eloquent-queries/
+│       ├── filament-admin/
+│       ├── git-ops/
+│       ├── laravel-inertia-react/
+│       ├── laravel-saas/
+│       ├── memory-helper/
+│       ├── modern-ui-ux/
+│       ├── pest-testing/
+│       ├── playwright-automation/
+│       ├── redis-queue/
+│       ├── reverb-websocket/
+│       ├── review-work/
+│       └── skill-creator/
+└── scripts/
+    └── install.sh                # Script de instalação com smart merge
 ```
 
 ## Como Usar
 
-### 1. Copiar para Configuração Global
+### Instalação Rápida
 
 ```bash
-# Copiar configurações para o diretório global do OpenCode
-cp -r .opencode/* ~/.config/opencode/
-
-# Ou clonar este repo diretamente no diretório de config
-git clone https://github.com/seu-user/my-config-opencode.git ~/.config/opencode
-```
-
-### 2. Instalar Dependências
-
-```bash
+# Clone e use o script de instalação
+git clone https://github.com/Muamm4/my-config-opencode.git ~/.config/opencode
 cd ~/.config/opencode
-bun install
+./scripts/install.sh
 ```
 
-### 3. Reiniciar o OpenCode
+### Instalação Manual
+
+```bash
+# Copiar configuração para diretório global do OpenCode
+cp -r .opencode/* ~/.config/opencode/
+```
+
+### Reiniciar o OpenCode
 
 Feche e abra novamente o OpenCode para carregar as configurações.
 
 ## Pré-requisitos
 
-- **Bun** ≥ 1.0: https://bun.sh
 - **OpenCode**: https://opencode.ai
-- **Node.js** ≥ 18 (para MCPs)
-- **Playwright** (para automação de browser)
+- **Bun** ≥ 1.0 (para oh-my-openagent): https://bun.sh
+- **Plugins globais**:
+  - `oh-my-openagent`
+  - `opencode-magic-context`
 
-## Quick Install
+## Scripts
 
-```bash
-# Clone e configure automaticamente
-git clone https://github.com/seu-user/my-config-opencode.git ~/.config/opencode
-cd ~/.config/opencode
-bun install
-```
+### install.sh
+
+Script de instalação inteligente que:
+- Faz backup da config existente
+- Mantém arquivos protegidos (opencode.json, oh-my-openagent.json, magic-context.jsonc)
+- Copia novas skills sem sobrescrever existentes
+- Resume o que foi instalado
 
 ## Personalização
 
-Edite os arquivos de configuração conforme necessário:
+Edite os arquivos conforme necessário:
 
 - `opencode.json` - Plugins e MCPs
-- `oh-my-openagent.json` - Agentes e skills
-
-## Troubleshooting
-
-```bash
-# Verificar instalação
-bunx oh-my-openagent@latest doctor
-bunx @cortexkit/opencode-magic-context@latest doctor
-```
+- `oh-my-openagent.json` - Agentes e allocation de skills
 
 ## Referências
 
