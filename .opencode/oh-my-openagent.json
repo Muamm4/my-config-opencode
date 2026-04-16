@@ -9,13 +9,39 @@
         "model": "opencode/minimax-m2.5-free",
         "variant": "max"
       },
-      "skills": ["skill-creator", "stack-advisor", "laravel-inertia-react", "laravel-saas", "docker-dev", "pest-testing", "database-pgsql", "redis-queue", "api-rest", "reverb-websocket", "eloquent-queries", "filament-admin", "memory-helper", "context-master", "git-ops", "playwright"]
+      "skills": [
+        "skill-creator",
+        "stack-advisor",
+        "laravel-inertia-react",
+        "laravel-saas",
+        "docker-dev",
+        "pest-testing",
+        "database-pgsql",
+        "redis-queue",
+        "api-rest",
+        "reverb-websocket",
+        "eloquent-queries",
+        "filament-admin",
+        "memory-helper",
+        "context-master",
+        "git-ops",
+        "playwright",
+        "css-master",
+        "modern-ui-ux"
+      ]
     },
     "hephaestus": {
       "model": "opencode/minimax-m2.5-free",
       "variant": "high",
       "reasoningEffort": "high",
-      "skills": ["laravel-inertia-react", "laravel-saas", "eloquent-queries", "api-rest", "redis-queue", "git-ops"]
+      "skills": [
+        "laravel-inertia-react",
+        "laravel-saas",
+        "eloquent-queries",
+        "api-rest",
+        "redis-queue",
+        "git-ops"
+      ]
     },
     "oracle": {
       "model": "opencode/minimax-m2.5-free",
@@ -67,16 +93,9 @@
   "browser_automation_engine": {
     "provider": "playwright"
   },
-  "mcps": {
-    "context7": {
-      "enabled": true
-    },
-    "grep_app": {
-      "enabled": true
-    },
-    "websearch": {
-      "enabled": true
-    }
-  },
-  "disabled_hooks": ["startup-toast"]
+  "disabled_hooks": [
+    "context-window-monitor",
+    "preemptive-compaction",
+    "anthropic-context-window-limit-recovery"
+  ]
 }

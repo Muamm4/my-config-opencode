@@ -1,6 +1,18 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
-    "list"
-  ]
+    "oh-my-openagent@latest",
+    "@cortexkit/opencode-magic-context@latest"
+  ],
+  "compaction": {
+    "auto": false,
+    "prune": false
+  },
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "@playwright/mcp@latest"]
+    }
+  }
 }
