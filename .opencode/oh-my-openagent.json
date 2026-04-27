@@ -2,16 +2,45 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-4-31b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "opencode/minimax-m2.5-free",
+          "provider": "opencode"
+        },
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        }
+      ],
       "temperature": 0.1,
       "variant": "max",
       "ultrawork": {
-        "model": "opencode/minimax-m2.5-free",
+        "model": "google/gemma-4-31b-it",
+        "provider": "google_ai_studio",
+        "fallback_models": [
+          {
+            "model": "google/gemini-3-flash",
+            "provider": "google_ai_studio"
+          },
+          {
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "google_ai_studio"
+          }
+        ],
         "variant": "max"
       },
       "skills": [
         "skill-creator",
         "stack-advisor",
+        "perf-optimizer",
+        "security-audit",
+        "api-documentation",
         "laravel-inertia-react",
         "laravel-saas",
         "docker-dev",
@@ -25,13 +54,23 @@
         "memory-helper",
         "context-master",
         "git-ops",
-        "playwright",
         "css-master",
         "modern-ui-ux"
       ]
     },
     "hephaestus": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-4-31b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        }
+      ],
       "variant": "high",
       "reasoningEffort": "high",
       "skills": [
@@ -44,7 +83,18 @@
       ]
     },
     "oracle": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-4-31b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        }
+      ],
       "variant": "high",
       "temperature": 0.1,
       "thinking": {
@@ -56,42 +106,119 @@
         "write": "deny"
       }
     },
-    "atlas": {
-      "model": "opencode/minimax-m2.5-free",
-      "temperature": 0.1,
-      "skills": ["skill-creator", "stack-advisor", "git-ops", "memory-helper"]
-    },
     "prometheus": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-4-31b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        }
+      ],
       "temperature": 0.1,
       "skills": ["skill-creator", "stack-advisor"]
     },
     "metis": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-4-31b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        }
+      ],
       "temperature": 0.3,
       "skills": ["stack-advisor"]
     },
     "momus": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-4-31b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        }
+      ],
       "variant": "xhigh",
       "temperature": 0.1,
       "skills": ["skill-creator"]
     },
+    "atlas": {
+      "model": "google/gemma-3-27b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        }
+      ],
+      "temperature": 0.1,
+      "skills": ["skill-creator", "stack-advisor", "git-ops", "memory-helper"]
+    },
     "explore": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-3-27b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        }
+      ],
       "temperature": 0.1
     },
     "librarian": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-3-27b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        }
+      ],
       "temperature": 0.1
     },
     "multimodal-looker": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-3-27b-it",
+      "provider": "google_ai_studio",
+      "fallback_models": [
+        {
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "google_ai_studio"
+        },
+        {
+          "model": "google/gemini-3-flash",
+          "provider": "google_ai_studio"
+        }
+      ],
       "temperature": 0.1
     }
   },
   "browser_automation_engine": {
-    "provider": "playwright"
+    "provider": "agent-browser"
   },
   "disabled_hooks": [
     "context-window-monitor",
