@@ -3,34 +3,24 @@
   "agents": {
     "sisyphus": {
       "model": "google/gemma-4-31b-it",
-      "provider": "google_ai_studio",
       "fallback_models": [
         {
-          "model": "opencode/minimax-m2.5-free",
-          "provider": "opencode"
+          "model": "opencode/minimax-m2.5-free"
         },
         {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
-        },
-        {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
+          "model": "google/gemini-3.1-flash-lite-preview"
         }
       ],
       "temperature": 0.1,
       "variant": "max",
       "ultrawork": {
         "model": "google/gemma-4-31b-it",
-        "provider": "google_ai_studio",
         "fallback_models": [
           {
-            "model": "google/gemini-3-flash",
-            "provider": "google_ai_studio"
+            "model": "opencode/minimax-m2.5-free"
           },
           {
-            "model": "google/gemini-3.1-flash-lite",
-            "provider": "google_ai_studio"
+            "model": "google/gemini-3.1-flash-lite-preview"
           }
         ],
         "variant": "max"
@@ -58,17 +48,22 @@
         "modern-ui-ux"
       ]
     },
-    "hephaestus": {
-      "model": "google/gemma-4-31b-it",
-      "provider": "google_ai_studio",
+    "sisyphus-junior": {
+      "model": "opencode/minimax-m2.5-free",
       "fallback_models": [
         {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
+          "model": "opencode/minimax-m2.5-free"
+        }
+      ]
+    },
+    "hephaestus": {
+      "model": "google/gemma-4-31b-it",
+      "fallback_models": [
+        {
+          "model": "opencode/minimax-m2.5-free"
         },
         {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
+          "model": "google/gemini-3.1-flash-lite-preview"
         }
       ],
       "variant": "high",
@@ -84,15 +79,12 @@
     },
     "oracle": {
       "model": "google/gemma-4-31b-it",
-      "provider": "google_ai_studio",
       "fallback_models": [
         {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
+          "model": "opencode/minimax-m2.5-free"
         },
         {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
+          "model": "google/gemini-3.1-flash-lite-preview"
         }
       ],
       "variant": "high",
@@ -108,15 +100,12 @@
     },
     "prometheus": {
       "model": "google/gemma-4-31b-it",
-      "provider": "google_ai_studio",
       "fallback_models": [
         {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
+          "model": "opencode/minimax-m2.5-free"
         },
         {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
+          "model": "google/gemini-3.1-flash-lite-preview"
         }
       ],
       "temperature": 0.1,
@@ -124,15 +113,12 @@
     },
     "metis": {
       "model": "google/gemma-4-31b-it",
-      "provider": "google_ai_studio",
       "fallback_models": [
         {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
+          "model": "opencode/minimax-m2.5-free"
         },
         {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
+          "model": "google/gemini-3.1-flash-lite-preview"
         }
       ],
       "temperature": 0.3,
@@ -140,15 +126,12 @@
     },
     "momus": {
       "model": "google/gemma-4-31b-it",
-      "provider": "google_ai_studio",
       "fallback_models": [
         {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
+          "model": "opencode/minimax-m2.5-free"
         },
         {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
+          "model": "google/gemini-3.1-flash-lite-preview"
         }
       ],
       "variant": "xhigh",
@@ -156,62 +139,44 @@
       "skills": ["skill-creator"]
     },
     "atlas": {
-      "model": "google/gemma-3-27b-it",
-      "provider": "google_ai_studio",
+      "model": "google/gemma-4-31b-it",
       "fallback_models": [
         {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
+          "model": "google/gemini-3.1-flash-lite-preview"
         },
         {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
+          "model": "opencode/minimax-m2.5-free"
         }
       ],
       "temperature": 0.1,
       "skills": ["skill-creator", "stack-advisor", "git-ops", "memory-helper"]
     },
     "explore": {
-      "model": "google/gemma-3-27b-it",
-      "provider": "google_ai_studio",
+      "model": "opencode/minimax-m2.5-free",
       "fallback_models": [
         {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
-        },
-        {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
+          "model": "opencode/minimax-m2.5-free"
         }
       ],
       "temperature": 0.1
     },
     "librarian": {
-      "model": "google/gemma-3-27b-it",
-      "provider": "google_ai_studio",
+      "model": "opencode/minimax-m2.5-free",
       "fallback_models": [
         {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
+          "model": "google/gemini-3.1-flash-lite-preview"
         },
         {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
+          "model": "opencode/minimax-m2.5-free"
         }
       ],
       "temperature": 0.1
     },
     "multimodal-looker": {
-      "model": "google/gemma-3-27b-it",
-      "provider": "google_ai_studio",
+      "model": "google/gemini-3.1-flash-lite-preview",
       "fallback_models": [
         {
-          "model": "google/gemini-3.1-flash-lite",
-          "provider": "google_ai_studio"
-        },
-        {
-          "model": "google/gemini-3-flash",
-          "provider": "google_ai_studio"
+          "model": "opencode/minimax-m2.5-free"
         }
       ],
       "temperature": 0.1
