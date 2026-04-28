@@ -5,16 +5,16 @@
       "model": "google/gemma-4-31b-it",
       "prompt_append": "You are the master orchestrator. PROACTIVELY manage context using the `context-master` skill and `ctx_reduce` to maintain headroom < 80%. ALWAYS load specialized skills via the `skill` tool before starting non-trivial work. Delegate implementation to `deep` or `unspecified-high` agents in parallel.",
       "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "google/gemini-3.1-flash-lite-preview"
+        "opencode/nemotron3-super-free",
+        "opencode/minimax-m2.5-free"
       ],
       "temperature": 0.1,
       "variant": "max",
       "ultrawork": {
         "model": "google/gemma-4-31b-it",
         "fallback_models": [
-          "opencode/minimax-m2.5-free",
-          "google/gemini-3.1-flash-lite-preview"
+          "opencode/nemotron3-super-free",
+          "opencode/minimax-m2.5-free"
         ],
         "variant": "max"
       },
@@ -124,16 +124,15 @@
       "skills": ["skill-creator", "stack-advisor", "git-ops", "memory-helper"]
     },
     "explore": {
-      "model": "google/gemma-4-26b-a4b-it",
+      "model": "opencode/ling2.6-flash-free",
       "fallback_models": [
         "opencode/minimax-m2.5-free"
       ],
       "temperature": 0.1
     },
     "librarian": {
-      "model": "google/gemma-4-26b-a4b-it",
+      "model": "opencode/ling2.6-flash-free",
       "fallback_models": [
-        "google/gemini-3.1-flash-lite-preview",
         "opencode/minimax-m2.5-free"
       ],
       "temperature": 0.1
@@ -150,14 +149,26 @@
     "visual-engineering": {
       "model": "google/gemini-3.1-flash-lite-preview"
     },
-    "ultrabrain": {
-      "model": "google/gemma-4-31b-it"
-    },
     "deep": {
-      "model": "google/gemma-4-31b-it"
+      "model": "google/gemma-4-31b-it",
+      "fallback_models": [
+        "opencode/nemotron3-super-free",
+        "opencode/minimax-m2.5-free"
+      ]
+    },
+    "ultrabrain": {
+      "model": "google/gemma-4-31b-it",
+      "fallback_models": [
+        "opencode/nemotron3-super-free",
+        "opencode/minimax-m2.5-free"
+      ]
     },
     "artistry": {
-      "model": "google/gemma-4-31b-it"
+      "model": "google/gemma-4-31b-it",
+      "fallback_models": [
+        "opencode/nemotron3-super-free",
+        "opencode/minimax-m2.5-free"
+      ]
     },
     "quick": {
       "model": "opencode/minimax-m2.5-free"
@@ -166,7 +177,10 @@
       "model": "opencode/minimax-m2.5-free"
     },
     "unspecified-high": {
-      "model": "opencode/minimax-m2.5-free"
+      "model": "opencode/nemotron3-super-free",
+      "fallback_models": [
+        "opencode/minimax-m2.5-free"
+      ]
     },
     "writing": {
       "model": "opencode/minimax-m2.5-free"
