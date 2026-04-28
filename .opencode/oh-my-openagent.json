@@ -3,25 +3,18 @@
   "agents": {
     "sisyphus": {
       "model": "google/gemma-4-31b-it",
+      "prompt_append": "You are the master orchestrator. PROACTIVELY manage context using the `context-master` skill and `ctx_reduce` to maintain headroom < 80%. ALWAYS load specialized skills via the `skill` tool before starting non-trivial work. Delegate implementation to `deep` or `unspecified-high` agents in parallel.",
       "fallback_models": [
-        {
-          "model": "opencode/minimax-m2.5-free"
-        },
-        {
-          "model": "google/gemini-3.1-flash-lite-preview"
-        }
+        "opencode/minimax-m2.5-free",
+        "google/gemini-3.1-flash-lite-preview"
       ],
       "temperature": 0.1,
       "variant": "max",
       "ultrawork": {
         "model": "google/gemma-4-31b-it",
         "fallback_models": [
-          {
-            "model": "opencode/minimax-m2.5-free"
-          },
-          {
-            "model": "google/gemini-3.1-flash-lite-preview"
-          }
+          "opencode/minimax-m2.5-free",
+          "google/gemini-3.1-flash-lite-preview"
         ],
         "variant": "max"
       },
@@ -49,22 +42,14 @@
       ]
     },
     "sisyphus-junior": {
-      "model": "opencode/minimax-m2.5-free",
-      "fallback_models": [
-        {
-          "model": "opencode/minimax-m2.5-free"
-        }
-      ]
+      "model": "google/gemma-4-31b-it",
+      "skills": ["context-master"]
     },
     "hephaestus": {
       "model": "google/gemma-4-31b-it",
       "fallback_models": [
-        {
-          "model": "opencode/minimax-m2.5-free"
-        },
-        {
-          "model": "google/gemini-3.1-flash-lite-preview"
-        }
+        "opencode/minimax-m2.5-free",
+        "google/gemini-3.1-flash-lite-preview"
       ],
       "variant": "high",
       "reasoningEffort": "high",
@@ -74,18 +59,19 @@
         "eloquent-queries",
         "api-rest",
         "redis-queue",
-        "git-ops"
+        "git-ops",
+        "pest-testing",
+        "docker-dev",
+        "security-audit",
+        "perf-optimizer"
       ]
     },
     "oracle": {
       "model": "google/gemma-4-31b-it",
+      "skills": ["stack-advisor", "security-audit"],
       "fallback_models": [
-        {
-          "model": "opencode/minimax-m2.5-free"
-        },
-        {
-          "model": "google/gemini-3.1-flash-lite-preview"
-        }
+        "opencode/minimax-m2.5-free",
+        "google/gemini-3.1-flash-lite-preview"
       ],
       "variant": "high",
       "temperature": 0.1,
@@ -100,26 +86,20 @@
     },
     "prometheus": {
       "model": "google/gemma-4-31b-it",
+      "prompt_append": "When planning, explicitly identify which specialized skills (e.g., `security-audit`, `modern-ui-ux`) should be loaded by the orchestrator to ensure senior-level execution.",
       "fallback_models": [
-        {
-          "model": "opencode/minimax-m2.5-free"
-        },
-        {
-          "model": "google/gemini-3.1-flash-lite-preview"
-        }
+        "opencode/minimax-m2.5-free",
+        "google/gemini-3.1-flash-lite-preview"
       ],
       "temperature": 0.1,
       "skills": ["skill-creator", "stack-advisor"]
     },
     "metis": {
       "model": "google/gemma-4-31b-it",
+      "prompt_append": "When analyzing requests, identify the need for specialized skills (e.g., `security-audit`, `modern-ui-ux`) and suggest them to the orchestrator to avoid generic AI slop.",
       "fallback_models": [
-        {
-          "model": "opencode/minimax-m2.5-free"
-        },
-        {
-          "model": "google/gemini-3.1-flash-lite-preview"
-        }
+        "opencode/minimax-m2.5-free",
+        "google/gemini-3.1-flash-lite-preview"
       ],
       "temperature": 0.3,
       "skills": ["stack-advisor"]
@@ -127,12 +107,8 @@
     "momus": {
       "model": "google/gemma-4-31b-it",
       "fallback_models": [
-        {
-          "model": "opencode/minimax-m2.5-free"
-        },
-        {
-          "model": "google/gemini-3.1-flash-lite-preview"
-        }
+        "opencode/minimax-m2.5-free",
+        "google/gemini-3.1-flash-lite-preview"
       ],
       "variant": "xhigh",
       "temperature": 0.1,
@@ -141,49 +117,72 @@
     "atlas": {
       "model": "google/gemma-4-31b-it",
       "fallback_models": [
-        {
-          "model": "google/gemini-3.1-flash-lite-preview"
-        },
-        {
-          "model": "opencode/minimax-m2.5-free"
-        }
+        "google/gemini-3.1-flash-lite-preview",
+        "opencode/minimax-m2.5-free"
       ],
       "temperature": 0.1,
       "skills": ["skill-creator", "stack-advisor", "git-ops", "memory-helper"]
     },
     "explore": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-4-26b-a4b-it",
       "fallback_models": [
-        {
-          "model": "opencode/minimax-m2.5-free"
-        }
+        "opencode/minimax-m2.5-free"
       ],
       "temperature": 0.1
     },
     "librarian": {
-      "model": "opencode/minimax-m2.5-free",
+      "model": "google/gemma-4-26b-a4b-it",
       "fallback_models": [
-        {
-          "model": "google/gemini-3.1-flash-lite-preview"
-        },
-        {
-          "model": "opencode/minimax-m2.5-free"
-        }
+        "google/gemini-3.1-flash-lite-preview",
+        "opencode/minimax-m2.5-free"
       ],
       "temperature": 0.1
     },
     "multimodal-looker": {
       "model": "google/gemini-3.1-flash-lite-preview",
       "fallback_models": [
-        {
-          "model": "opencode/minimax-m2.5-free"
-        }
+        "opencode/minimax-m2.5-free"
       ],
       "temperature": 0.1
     }
   },
+  "categories": {
+    "visual-engineering": {
+      "model": "google/gemini-3.1-flash-lite-preview"
+    },
+    "ultrabrain": {
+      "model": "google/gemma-4-31b-it"
+    },
+    "deep": {
+      "model": "google/gemma-4-31b-it"
+    },
+    "artistry": {
+      "model": "google/gemma-4-31b-it"
+    },
+    "quick": {
+      "model": "opencode/minimax-m2.5-free"
+    },
+    "unspecified-low": {
+      "model": "opencode/minimax-m2.5-free"
+    },
+    "unspecified-high": {
+      "model": "opencode/minimax-m2.5-free"
+    },
+    "writing": {
+      "model": "opencode/minimax-m2.5-free"
+    }
+  },
   "browser_automation_engine": {
     "provider": "agent-browser"
+  },
+  "background_task": {
+    "defaultConcurrency": 3,
+    "providerConcurrency": {
+      "google": 5,
+      "opencode": 5,
+      "anthropic": 3,
+      "openai": 3
+    }
   },
   "disabled_hooks": [
     "context-window-monitor",

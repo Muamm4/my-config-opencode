@@ -73,9 +73,14 @@ Instale os plugins essenciais para a orquestração e contexto:
 ```bash
 # Plugin de orquestração de agentes
 bun install -g oh-my-openagent
+bunx oh-my-openagent install
 
 # Plugin de contexto inteligente
 bun install -g opencode-magic-context
+bunx --bun @cortexkit/opencode-magic-context@latest setup
+
+# Automação de navegador (Skill agent-browser)
+npm i -g agent-browser && agent-browser install --with-deps
 ```
 
 ### 4. Aplicação da Configuração Customizada
@@ -103,16 +108,6 @@ Feche e abra novamente o OpenCode para que todas as skills e configurações de 
   - `oh-my-openagent`
   - `opencode-magic-context`
 
-## Scripts
-
-### install.sh
-
-Script de instalação inteligente que:
-
-- Faz backup da config existente
-- Mantém arquivos protegidos (opencode.json, oh-my-openagent.json, magic-context.jsonc)
-- Copia novas skills sem sobrescrever existentes
-- Resume o que foi instalado
 
 ## Personalização
 
@@ -124,5 +119,5 @@ Edite os arquivos conforme necessário:
 ## Referências
 
 - OpenCode: https://opencode.ai
-- Oh-My-OpenAgent: https://github.com/oh-my-openagent/oh-my-openagent
+- Oh-My-OpenAgent: https://ohmyopenagent.com/
 - Magic Context: https://github.com/cortexkit/opencode-magic-context

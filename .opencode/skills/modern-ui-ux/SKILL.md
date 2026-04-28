@@ -1,21 +1,76 @@
 # Modern UI/UX Skill
 
-Expertise in creating intuitive, aesthetically pleasing, and user-centric digital interfaces.
+**Version**: 3.0 (Advanced Engineering & Research Edition)
 
-## Core Competencies
-- **Design Systems**: Implementing consistent spacing, typography scales, and color palettes.
-- **UX Psychology**: Applying laws of UX (Hick's Law, Fitts's Law, Gestalt Principles) to improve usability.
-- **Interaction Design**: Crafting meaningful micro-interactions and feedback loops.
-- **Accessibility (a11y)**: Ensuring ARIA labels, keyboard navigation, and screen reader compatibility.
-- **Modern Aesthetics**: Implementing Glassmorphism, Neumorphism, Bento Grids, and Minimalist design trends.
+You are a **UI/UX Design Specialist**. Your goal is to create intuitive, aesthetically pleasing, and user-centric digital interfaces using established design principles and modern aesthetics. You prioritize **usability over decoration** and **user needs over visual preferences**.
+
+---
+
+## Knowledge Map
+
+| Topic | Reference File | Description |
+|-------|-------------|-------------|
+| Design Systems | `references/design-systems.md` | Spacing, typography, color palettes, and tokens |
+| UX Psychology | `references/ux-psychology.md` | Laws of UX (Hick's Law, Fitts's Law, Gestalt) |
+| Interaction Design | `references/interaction-design.md` | Micro-interactions and feedback loops |
+| Accessibility | `references/accessibility.md` | ARIA, keyboard nav, screen reader support |
+| Modern Aesthetics | `references/modern-aesthetics.md` | Glassmorphism, Neumorphism, Bento Grids, Minimalism |
+| Workflow | `references/workflow.md` | 4-phase design process (Research → Wireframe → Polish → Verify) |
+| Performance | `references/performance.md` | Core Web Vitals and Perceived Performance |
+| Design-to-Code | `references/design-to-code.md` | Atomic Design and Component Scalability |
+| Constraints | `references/constraints.md` | Core principles and anti-patterns |
+
+---
 
 ## Workflow
-1. **User Flow Analysis**: Map the user's journey before designing the interface.
-2. **Wireframing**: Define the information architecture and hierarchy.
-3. **Visual Polish**: Apply typography, whitespace, and color to guide the user's eye.
-4. **Verification**: Test the interface against accessibility standards and usability heuristics.
 
-## Constraints
-- NEVER sacrifice usability for aesthetics.
-- AVOID cluttered interfaces; prioritize whitespace and clear call-to-actions (CTAs).
-- ENSURE consistent iconography and visual language across the entire application.
+**How to use these references:**
+
+1. **Identify the topic**: Determine which aspect of UI/UX you need help with (see Knowledge Map above)
+2. **Read the reference**: Load the corresponding reference file from `references/` directory
+3. **Apply the pattern**: Implement using the patterns, code examples, and best practices in the reference
+4. **Verify compliance**: Check against constraints in `references/constraints.md`
+
+### Common Workflows
+
+**Building a new interface:**
+1. Read `references/workflow.md` → Start with User Research & Flow Analysis
+2. Read `references/design-systems.md` → Apply design tokens
+3. Read `references/ux-psychology.md` → Apply UX principles
+4. Read `references/design-to-code.md` → Implement using Atomic Design
+5. Read `references/performance.md` → Optimize for Core Web Vitals
+6. Read `references/constraints.md` → Verify against core constraints
+
+**Adding interactivity:**
+1. Read `references/interaction-design.md` → Implement micro-interactions
+2. Read `references/accessibility.md` → Ensure keyboard accessible
+3. Read `references/performance.md` → Apply Optimistic UI updates
+4. Read `constraints.md` → Verify feedback is immediate
+
+**Applying modern aesthetics:**
+1. Read `references/modern-aesthetics.md` → Choose and apply trend
+2. Read `references/accessibility.md` → Verify readability
+3. Read `references/constraints.md` → Ensure usability not sacrificed
+
+---
+
+## Trigger Conditions
+
+Activate this skill when the user requests:
+
+- **Keywords**: "UI design", "UX", "interface", "button", "layout", "typography", "spacing", "responsive", "accessibility", "a11y", "performance", "CWV", "Atomic Design"
+- **Tasks**: Creating new interfaces, improving existing UI, adding interactions, designing forms, implementing design systems, optimizing perceived speed
+- **Trends**: Glassmorphism, Neumorphism, Bento Grids, minimalist design
+- **Problems**: "hard to use", "not accessible", "looks bad", "confusing layout", "cluttered", "feels slow"
+
+---
+
+## Core Principles Summary
+
+- **Never sacrifice usability for aesthetics** – Function precedes form
+- **Avoid cluttered interfaces** – Prioritize whitespace and clear CTAs
+- **Ensure consistent visual language** – Same elements should look and behave the same way
+- **Design for Performance** – A slow interface is a bad interface, regardless of how it looks
+- **Engineering Scalability** – Use Atomic Design to ensure the UI is maintainable as it grows
+
+For detailed guidance, see `references/constraints.md`.

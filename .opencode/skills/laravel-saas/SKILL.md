@@ -1,181 +1,47 @@
 # laravel-saas
 
 ## Identity
-You are a Laravel SaaS specialist. Expert in Laravel 13 + React + Inertia + Tailwind + ShadCN + Octane/Swoole stack.
 
-## Stack Overview
+You are a **Laravel SaaS Specialist**. Your goal is to provide expert guidance on Laravel 13 + React + Inertia + Tailwind + ShadCN + Octane/Swoole stack development. You prioritize performance, maintainability, and modern PHP patterns.
 
-Your project at `~/saas` uses:
-- **Laravel 13** (PHP 8.3)
-- **Laravel Octane** with Swoole
-- **React 19** + TypeScript
-- **Inertia v2** (@inertiajs/react ^2.0.0)
-- **Tailwind 4** (@tailwindcss/vite)
-- **ShadCN UI** (@radix-ui/*)
-- **Reverb** (WebSocket)
-- **Spatie** (Permission + Activitylog)
+**Project Location**: `~/saas`
 
-## Project Structure
+## Knowledge Map
 
-```
-~/saas/
-├── app/                    # Laravel app
-├── resources/js/           # React frontend
-│   ├── Pages/
-│   ├── components/
-│   └── layouts/
-├── routes/
-├── database/
-├── composer.json          # Dependencies
-└── package.json         # npm deps
-```
+| Topic | Reference File |
+|-------|----------------|
+| Technology Stack | `references/stack-overview.md` |
+| Project Structure | `references/project-structure.md` |
+| Development Commands | `references/commands.md` |
+| Octane / Swoole | `references/octane-swoole.md` |
+| Dependencies | `references/dependencies.md` |
+| Inertia v2 | `references/inertia-v2.md` |
+| Permissions & Roles | `references/permissions.md` |
+| Tailwind 4 | `references/tailwind-4.md` |
+| ShadCN UI | `references/shadcn.md` |
+| Docker Services | `references/docker-services.md` |
+| Reverb WebSocket | `references/reverb.md` |
+| .env Configuration | `references/env-configuration.md` |
 
-## Commands
+## Workflow
 
-### Development
-```bash
-cd ~/saas
-npm run dev           # Vite dev server
-php artisan serve   # Laravel server
-```
+1. **Identify the topic** from the user's question
+2. **Read the corresponding reference file** from `references/` directory
+3. **Apply the pattern** using the code examples and best practices in the reference
+4. **Verify implementation** matches the project's conventions
 
-### With Octane (Swoole)
-```bash
-# Start octane with swoole
-php artisan octane:start --host=0.0.0.0 --port=8000
-
-# Or use dev script
-composer dev:octane
-```
-
-### Build
-```bash
-npm run build         # Production build
-npm run build:ssr    # With SSR
-```
-
-## Octane/Swoole Notes
-
-- Octane boots Laravel once, keeps in memory
-- Use `octane:reload` after code changes
-- Swoole provides ~10x performance vs FPM
-- Reverb for WebSocket (real-time)
-
-## Package.json Key Scripts
-
-| Script | Usage |
-|--------|-------|
-| `dev` | Dev server + HMR |
-| `build` | Production |
-| `build:ssr` | SSR build |
-| `format` | Prettier |
-| `lint` | ESLint |
-
-## Dependencies - Backend
-
-```json
-{
-  "laravel/framework": "^13.0",
-  "laravel/octane": "^2.17",
-  "laravel/reverb": "^1.0",
-  "spatie/laravel-permission": "*",
-  "spatie/laravel-activitylog": "^4.0"
-}
-```
-
-## Dependencies - Frontend
-
-```json
-{
-  "@inertiajs/react": "^2.0.0",
-  "@radix-ui/react-*": "^1.1.x",
-  "tailwindcss": "^4.1.x"
-}
-```
-
-## Inertia v2 (Breaking Changes)
-
-- `Inertia::render()` → `Inertia::render()` (same)
-- Pages in `resources/js/Pages/`
-- useForm from `@inertiajs/react`
-- Lazy loading supported
-
-## Permission & Roles (Spatie)
-
-```php
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
-
-// Assign role
-$user->assignRole('admin');
-
-// Check permission
-$user->can('edit users');
-```
-
-## Tailwind 4 Changes
-
-- Uses `@tailwindcss/vite` plugin
-- CSS imports: `@import "tailwindcss"`
-- No more `@tailwind base/components/utilities`
-- Theme in CSS: `@theme { --color-primary: ... }`
-
-## ShadCN Components
-
-```bash
-# Add component
-npx shadcn@latest add button
-
-# Component path
-~/saas/resources/js/components/ui/
-```
-
-## Docker Services
-
-The project also uses:
-- `evolution-go` - WhatsApp API (port 8080)
-- PostgreSQL databases
-
-```bash
-# Start Docker
-docker-compose up -d
-
-# Check status
-docker-compose ps
-```
-
-## Reverb (WebSocket)
-
-```bash
-# Start reverb
-php artisan reverb:start --host=0.0.0.0 --port=9090
-```
-
-## .env Configuration
-
-```
-# Octane
-OCTANE_SERVER=swoole
-OCTANE_PORT=8000
-
-# Reverb
-REVERB_APP_ID=
-REVERB_APP_KEY=
-REVERB_APP_SECRET=
-REVERB_HOST=
-
-# Database
-DB_CONNECTION=pgsql
-DB_HOST=localhost
-DB_PORT=5432
-
-# Redis (for queue/cache)
-REDIS_HOST=127.0.0.1
-REDIS_PORT=6379
-```
+**Example**:
+- User asks: "How do I start the Octane server?"
+- Action: Read `references/commands.md` → Execute `php artisan octane:start`
 
 ## Trigger Conditions
-- When user asks about ~/saas project
-- When mentioning Laravel + React + Octane
-- When asking about permission/roles
-- When needing Tailwind 4 or ShadCN
+
+This skill activates when:
+- User mentions the `~/saas` project
+- User asks about Laravel + React + Inertia stack
+- User mentions Octane, Swoole, or performance
+- User asks about permissions/roles with Spatie
+- User needs Tailwind 4 or ShadCN UI guidance
+- User asks about Reverb WebSocket configuration
+- User needs Docker services (PostgreSQL, Redis)
+- User asks about Laravel 13 features

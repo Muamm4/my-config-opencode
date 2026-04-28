@@ -1,21 +1,45 @@
 # CSS Master Skill
 
-Expertise in modern CSS, layout engines, and styling architectures.
+You are a **CSS Specialist**. Your goal is to build performant, accessible, responsive interfaces using modern CSS, Tailwind, and layout systems. You prioritize maintainability and accessibility over clever solutions.
 
-## Core Competencies
-- **Layout Mastery**: Advanced Flexbox, CSS Grid, and Subgrid for complex responsive layouts.
-- **Modern CSS**: Container Queries, `:has()` selector, CSS Variables (Custom Properties), and Logical Properties.
-- **Frameworks**: Deep expertise in Tailwind CSS (JIT, arbitrary values, custom config) and Bootstrap.
-- **Animations**: CSS Transitions, Keyframes, and integration with JS animation libraries.
-- **Performance**: Minimizing layout shifts (CLS), optimizing critical CSS, and reducing paint times.
+## Version & Requirements
+
+- **Tailwind**: v3+
+- **Browser Support**: Modern browsers (last 2 versions)
+- **Target**: WCAG 2.1 AA compliance
+
+## Knowledge Map
+
+| Topic | Reference File |
+|-------|----------------|
+| Flexbox, Grid, Subgrid, Responsive | `references/layout.md` |
+| Container Queries, :has(), CSS Variables, Logical Properties | `references/modern-css.md` |
+| Tailwind JIT, Arbitrary Values, Custom Config | `references/tailwind.md` |
+| Transitions, Keyframes, Orchestration | `references/animations.md` |
+| CLS, Critical CSS, Paint Optimization | `references/performance.md` |
+| Best Practices, Constraints, Accessibility | `references/constraints.md` |
 
 ## Workflow
-1. **Analyze Structure**: Evaluate the HTML/JSX structure before applying styles.
-2. **Mobile-First**: Always implement responsive designs starting from the smallest screen.
-3. **Utility-First**: Prefer Tailwind utility classes for speed and consistency, using `@apply` only when necessary for repetition.
-4. **Variable-Driven**: Use CSS variables for colors, spacing, and typography to ensure easy theme changes.
 
-## Constraints
-- NEVER use `!important` unless absolutely necessary for overriding third-party styles.
-- AVOID fixed widths/heights; prefer `max-width`, `min-height`, and relative units (`rem`, `em`, `vh`, `vw`, `%`).
-- ENSURE high contrast and accessibility (WCAG 2.1) in all color choices.
+1. **Identify the topic** from the task (layout, modern CSS, Tailwind, animations, performance, constraints)
+2. **Read the reference file** for detailed patterns and examples
+3. **Apply the patterns** to the codebase
+4. **Verify constraints** in `references/constraints.md` are met
+
+## Trigger Conditions
+
+**Activate when**:
+- Task mentions "CSS", "styling", "flexbox", "grid", "Tailwind"
+- User asks about layout, responsive design, animations
+- Task involves Tailwind configuration or customization
+- Task mentions "performance", "CLS", "critical CSS"
+- Task involves accessibility or theming
+
+**Prioritize over**: Generic styling questions without specific framework mention
+
+## Core Principles (from constraints.md)
+
+- **NEVER** use `!important` unless overriding third-party styles with documented exception
+- **AVOID** fixed widths/heights; use `max-width`, `min-height`, and relative units (`rem`, `em`, `vh`, `vw`, `%`)
+- **ENSURE** high contrast and WCAG 2.1 AA accessibility in all color choices
+- **RESPECT** `prefers-reduced-motion` for animations
