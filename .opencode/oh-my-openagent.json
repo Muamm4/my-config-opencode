@@ -3,7 +3,7 @@
   "agents": {
     "sisyphus": {
       "model": "google/gemma-4-31b-it",
-      "prompt_append": "You are the master orchestrator. PROACTIVELY manage context using the `context-master` skill and `ctx_reduce` to maintain headroom < 80%. ALWAYS load specialized skills via the `skill` tool before starting non-trivial work. Delegate implementation to `deep` or `unspecified-high` agents in parallel.",
+      "prompt_append": "You are the master orchestrator. Be extremely concise. No preamble, no flattery, no status updates. PROACTIVELY manage context using the `context-master` skill and `ctx_reduce` to maintain headroom < 80%. ALWAYS load specialized skills via the `skill` tool before starting non-trivial work. Delegate implementation to `deep` or `unspecified-high` agents in parallel.",
       "fallback_models": [
         "opencode/nemotron3-super-free",
         "opencode/minimax-m2.5-free"
@@ -17,29 +17,7 @@
           "opencode/minimax-m2.5-free"
         ],
         "variant": "max"
-      },
-      "skills": [
-        "skill-creator",
-        "stack-advisor",
-        "perf-optimizer",
-        "security-audit",
-        "api-documentation",
-        "laravel-inertia-react",
-        "laravel-saas",
-        "docker-dev",
-        "pest-testing",
-        "database-pgsql",
-        "redis-queue",
-        "api-rest",
-        "reverb-websocket",
-        "eloquent-queries",
-        "filament-admin",
-        "memory-helper",
-        "context-master",
-        "git-ops",
-        "css-master",
-        "modern-ui-ux"
-      ]
+      }
     },
     "sisyphus-junior": {
       "model": "google/gemma-4-31b-it",
@@ -52,27 +30,11 @@
         "google/gemini-3.1-flash-lite-preview"
       ],
       "variant": "high",
-      "reasoningEffort": "high",
-      "skills": [
-        "laravel-inertia-react",
-        "laravel-saas",
-        "eloquent-queries",
-        "api-rest",
-        "redis-queue",
-        "git-ops",
-        "pest-testing",
-        "docker-dev",
-        "security-audit",
-        "perf-optimizer"
-      ]
+      "reasoningEffort": "high"
     },
     "oracle": {
       "model": "google/gemma-4-31b-it",
-      "skills": ["stack-advisor", "security-audit"],
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "google/gemini-3.1-flash-lite-preview"
-      ],
+      "fallback_models": ["opencode/minimax-m2.5-free"],
       "variant": "high",
       "temperature": 0.1,
       "thinking": {
@@ -91,8 +53,7 @@
         "opencode/minimax-m2.5-free",
         "google/gemini-3.1-flash-lite-preview"
       ],
-      "temperature": 0.1,
-      "skills": ["skill-creator", "stack-advisor"]
+      "temperature": 0.1
     },
     "metis": {
       "model": "google/gemma-4-31b-it",
@@ -101,8 +62,7 @@
         "opencode/minimax-m2.5-free",
         "google/gemini-3.1-flash-lite-preview"
       ],
-      "temperature": 0.3,
-      "skills": ["stack-advisor"]
+      "temperature": 0.3
     },
     "momus": {
       "model": "google/gemma-4-31b-it",
@@ -111,8 +71,7 @@
         "google/gemini-3.1-flash-lite-preview"
       ],
       "variant": "xhigh",
-      "temperature": 0.1,
-      "skills": ["skill-creator"]
+      "temperature": 0.1
     },
     "atlas": {
       "model": "google/gemma-4-31b-it",
@@ -120,34 +79,35 @@
         "google/gemini-3.1-flash-lite-preview",
         "opencode/minimax-m2.5-free"
       ],
-      "temperature": 0.1,
-      "skills": ["skill-creator", "stack-advisor", "git-ops", "memory-helper"]
+      "temperature": 0.1
     },
     "explore": {
       "model": "opencode/ling2.6-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free"
-      ],
+      "fallback_models": ["opencode/minimax-m2.5-free"],
       "temperature": 0.1
     },
     "librarian": {
       "model": "opencode/ling2.6-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free"
-      ],
+      "fallback_models": ["opencode/minimax-m2.5-free"],
       "temperature": 0.1
     },
     "multimodal-looker": {
-      "model": "google/gemini-3.1-flash-lite-preview",
+      "model": "opencode/ling2.6-flash-free",
       "fallback_models": [
-        "opencode/minimax-m2.5-free"
+        "opencode/minimax-m2.5-free",
+        "google/gemini-3.1-flash-lite-preview"
       ],
       "temperature": 0.1
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "google/gemini-3.1-flash-lite-preview"
+      "model": "google/gemma-4-31b-it",
+      "fallback_models": [
+        "opencode/minimax-m2.5-free",
+        "opencode/nemotron3-super-free",
+        "google/gemini-3.1-flash-lite-preview"
+      ]
     },
     "deep": {
       "model": "google/gemma-4-31b-it",
@@ -171,19 +131,21 @@
       ]
     },
     "quick": {
-      "model": "opencode/minimax-m2.5-free"
+      "model": "opencode/ling2.6-flash-free"
     },
     "unspecified-low": {
-      "model": "opencode/minimax-m2.5-free"
+      "model": "opencode/ling2.6-flash-free"
     },
     "unspecified-high": {
-      "model": "opencode/nemotron3-super-free",
+      "model": "google/gemma-4-31b-it",
       "fallback_models": [
-        "opencode/minimax-m2.5-free"
+        "opencode/minimax-m2.5-free",
+        "opencode/nemotron3-super-free",
+        "google/gemini-3.1-flash-lite-preview"
       ]
     },
     "writing": {
-      "model": "opencode/minimax-m2.5-free"
+      "model": "google/gemma-4-31b-it"
     }
   },
   "browser_automation_engine": {
@@ -192,7 +154,7 @@
   "background_task": {
     "defaultConcurrency": 3,
     "providerConcurrency": {
-      "google": 5,
+      "google": 3,
       "opencode": 5,
       "anthropic": 3,
       "openai": 3

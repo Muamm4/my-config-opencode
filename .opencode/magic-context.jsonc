@@ -1,10 +1,34 @@
 {
-  "$schema": "https://raw.githubusercontent.com/cortexkit/opencode-magic-context/master/assets/magic-context.schema.json",
-  "enabled": true,
-  "historian": {
-    "model": "opencode/minimax-m2.5-free"
+  "$schema": "https://raw.githubusercontent.com/cortexkit/opencode-magic-context/master/schema.json",
+  "magic_context": {
+    "enabled": true,
+    "models": {
+      "historian": "opencode/minimax-m2.5-free",
+      "dreamer": "google/gemma-4-31b-it",
+      "sidekick": "google/gemini-3.1-flash-lite-preview",
+    },
+    "memory": {
+      "enabled": true,
+      "maxMemories": 200,
+      "importanceThreshold": 0.6,
+    },
+    "context": {
+      "maxTokens": 8000,
+      "injectionBudget": 2000,
+      "recentMessages": 15,
+    },
+    "compression": {
+      "enabled": true,
+      "chunkSize": 2000,
+      "aggressive": true,
+    },
+    "retrieval": {
+      "maxResults": 8,
+      "rerank": true,
+    },
+    "background": {
+      "historianInterval": 2,
+      "dreamerInterval": 10,
+    },
   },
-  "dreamer": {
-    "enabled": true
-  }
 }
