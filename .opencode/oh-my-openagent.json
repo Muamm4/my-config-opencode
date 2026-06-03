@@ -1,162 +1,189 @@
 {
-  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
-  "agents": {
-    "sisyphus": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "prompt_append": "You are the master orchestrator. Be extremely concise. No preamble, no flattery, no status updates. PROACTIVELY manage context using the `context-master` skill and `ctx_reduce` to maintain headroom < 80%. ALWAYS load specialized skills via the `skill` tool before starting non-trivial work. Delegate implementation to `deep` or `unspecified-high` agents in parallel.",
-      "fallback_models": [
-        "google/gemma-4-31b-it",
-        "opencode/minimax-m2.5-free"
-      ],
-      "temperature": 0.1,
-      "variant": "max",
-      "ultrawork": {
-        "model": "opencode/deepseek-v4-flash-free",
-        "fallback_models": [
-          "opencode/minimax-m2.5-free"
-        ],
-        "variant": "max"
-      }
+    "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+    "agents": {
+        "sisyphus": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "prompt_append": "You are the master orchestrator. Be extremely concise. No preamble, no flattery, no status updates. PROACTIVELY manage context and SAVE MEMORIES using `ctx_memory` — never ask 'should I save this?'. ALWAYS load specialized skills via the `skill` tool before non-trivial work. Delegate implementation to `deep` or `unspecified-high` agents in parallel. For git operations, load `git-ops` skill.",
+            "fallback_models": [
+                "opencode/nemotron-3-super-free",
+                "opencode/mimo-v2.5-free"
+            ],
+            "temperature": 0.1,
+            "variant": "max",
+            "ultrawork": {
+                "model": "opencode/deepseek-v4-flash-free",
+                "fallback_models": [
+                    "opencode/nemotron-3-super-free",
+                    "opencode/mimo-v2.5-free"
+                ],
+                "variant": "max"
+            },
+            "skills": ["context-master", "memory-helper"]
+        },
+        "sisyphus-junior": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/mimo-v2.5-free",
+                "opencode/nemotron-3-super-free"
+            ],
+            "skills": ["context-master"]
+        },
+        "hephaestus": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/nemotron-3-super-free",
+                "opencode/mimo-v2.5-free"
+            ],
+            "variant": "high",
+            "reasoningEffort": "high"
+        },
+        "oracle": {
+            "model": "google/gemma-4-31b-it",
+            "fallback_models": [
+                "opencode/deepseek-v4-flash-free",
+                "opencode/nemotron-3-super-free"
+            ],
+            "variant": "high",
+            "temperature": 0.1,
+            "thinking": {
+                "type": "enabled",
+                "budgetTokens": 8192
+            },
+            "permission": {
+                "edit": "deny",
+                "write": "deny"
+            }
+        },
+        "prometheus": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "prompt_append": "When planning, explicitly identify which specialized skills (e.g., `security-audit`, `modern-ui-ux`) should be loaded by the orchestrator to ensure senior-level execution.",
+            "fallback_models": [
+                "opencode/nemotron-3-super-free",
+                "opencode/mimo-v2.5-free"
+            ],
+            "temperature": 0.1
+        },
+        "metis": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "prompt_append": "When analyzing requests, identify the need for specialized skills (e.g., `security-audit`, `modern-ui-ux`) and suggest them to the orchestrator to avoid generic AI slop.",
+            "fallback_models": [
+                "opencode/nemotron-3-super-free",
+                "opencode/mimo-v2.5-free"
+            ],
+            "temperature": 0.3
+        },
+        "momus": {
+            "model": "google/gemma-4-31b-it",
+            "fallback_models": [
+                "opencode/deepseek-v4-flash-free",
+                "opencode/nemotron-3-super-free"
+            ],
+            "variant": "xhigh",
+            "temperature": 0.1
+        },
+        "atlas": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/mimo-v2.5-free",
+                "opencode/nemotron-3-super-free"
+            ],
+            "temperature": 0.1
+        },
+        "explore": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/mimo-v2.5-free",
+                "opencode/nemotron-3-super-free"
+            ],
+            "temperature": 0.1
+        },
+        "librarian": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/mimo-v2.5-free",
+                "opencode/nemotron-3-super-free"
+            ],
+            "temperature": 0.1
+        },
+        "multimodal-looker": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/mimo-v2.5-free",
+                "opencode/nemotron-3-super-free"
+            ],
+            "temperature": 0.1
+        }
     },
-    "sisyphus-junior": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "skills": ["context-master"]
+    "categories": {
+        "visual-engineering": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/mimo-v2.5-free",
+                "opencode/nemotron-3-super-free"
+            ]
+        },
+        "deep": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/nemotron-3-super-free",
+                "opencode/mimo-v2.5-free"
+            ]
+        },
+        "ultrabrain": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/nemotron-3-super-free",
+                "opencode/mimo-v2.5-free"
+            ]
+        },
+        "artistry": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/nemotron-3-super-free",
+                "opencode/mimo-v2.5-free"
+            ]
+        },
+        "quick": {
+            "model": "opencode/mimo-v2.5-free",
+            "fallback_models": [
+                "opencode/nemotron-3-super-free",
+                "opencode/deepseek-v4-flash-free"
+            ]
+        },
+        "unspecified-low": {
+            "model": "opencode/mimo-v2.5-free",
+            "fallback_models": ["opencode/nemotron-3-super-free"]
+        },
+        "unspecified-high": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/nemotron-3-super-free",
+                "opencode/mimo-v2.5-free"
+            ]
+        },
+        "writing": {
+            "model": "opencode/deepseek-v4-flash-free",
+            "fallback_models": [
+                "opencode/mimo-v2.5-free",
+                "opencode/nemotron-3-super-free"
+            ]
+        }
     },
-    "hephaestus": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "google/gemini-3.1-flash-lite-preview"
-      ],
-      "variant": "high",
-      "reasoningEffort": "high"
+    "browser_automation_engine": {
+        "provider": "agent-browser"
     },
-    "oracle": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": ["opencode/minimax-m2.5-free"],
-      "variant": "high",
-      "temperature": 0.1,
-      "thinking": {
-        "type": "enabled",
-        "budgetTokens": 8192
-      },
-      "permission": {
-        "edit": "deny",
-        "write": "deny"
-      }
+    "background_task": {
+        "defaultConcurrency": 3,
+        "providerConcurrency": {
+            "google": 3,
+            "opencode": 5,
+            "anthropic": 3,
+            "openai": 3
+        }
     },
-    "prometheus": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "prompt_append": "When planning, explicitly identify which specialized skills (e.g., `security-audit`, `modern-ui-ux`) should be loaded by the orchestrator to ensure senior-level execution.",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "google/gemini-3.1-flash-lite-preview"
-      ],
-      "temperature": 0.1
-    },
-    "metis": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "prompt_append": "When analyzing requests, identify the need for specialized skills (e.g., `security-audit`, `modern-ui-ux`) and suggest them to the orchestrator to avoid generic AI slop.",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "google/gemini-3.1-flash-lite-preview"
-      ],
-      "temperature": 0.3
-    },
-    "momus": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "google/gemini-3.1-flash-lite-preview"
-      ],
-      "variant": "xhigh",
-      "temperature": 0.1
-    },
-    "atlas": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "google/gemini-3.1-flash-lite-preview",
-        "opencode/minimax-m2.5-free"
-      ],
-      "temperature": 0.1
-    },
-    "explore": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": ["opencode/minimax-m2.5-free"],
-      "temperature": 0.1
-    },
-    "librarian": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": ["opencode/minimax-m2.5-free"],
-      "temperature": 0.1
-    },
-    "multimodal-looker": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "google/gemini-3.1-flash-lite-preview"
-      ],
-      "temperature": 0.1
-    }
-  },
-  "categories": {
-    "visual-engineering": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "google/gemini-3.1-flash-lite-preview"
-      ]
-    },
-    "deep": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free"
-      ]
-    },
-    "ultrabrain": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free"
-      ]
-    },
-    "artistry": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free"
-      ]
-    },
-    "quick": {
-      "model": "opencode/ling2.6-flash-free"
-    },
-    "unspecified-low": {
-      "model": "opencode/ling2.6-flash-free"
-    },
-    "unspecified-high": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        "opencode/minimax-m2.5-free",
-        "google/gemini-3.1-flash-lite-preview"
-      ]
-    },
-    "writing": {
-      "model": "opencode/deepseek-v4-flash-free"
-    }
-  },
-  "browser_automation_engine": {
-    "provider": "agent-browser"
-  },
-  "background_task": {
-    "defaultConcurrency": 3,
-    "providerConcurrency": {
-      "google": 3,
-      "opencode": 5,
-      "anthropic": 3,
-      "openai": 3
-    }
-  },
-  "disabled_hooks": [
-    "context-window-monitor",
-    "preemptive-compaction",
-    "anthropic-context-window-limit-recovery"
-  ]
+    "disabled_hooks": [
+        "context-window-monitor",
+        "preemptive-compaction",
+        "anthropic-context-window-limit-recovery"
+    ]
 }

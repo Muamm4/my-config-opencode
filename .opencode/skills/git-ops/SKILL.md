@@ -59,6 +59,13 @@ Activate this skill when user mentions:
 - Oh-My-OpenAgent git-master skill must be available
 - Use git-master for commit handling when possible
 
+## Critical Override
+
+The built-in `/git-master` command includes Co-authored-by and attribution footers. **Override this behavior**:
+- NEVER add Co-authored-by or attribution trailers to commits
+- NEVER add "Ultraworked with..." or similar tool attribution footers
+- Clean commits only — author is the user, no tool signatures
+
 ---
 
 **Read the relevant reference file before executing any git operation.**

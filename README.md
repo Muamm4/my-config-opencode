@@ -5,12 +5,12 @@ Repositório de configuração pessoal do OpenCode com oh-my-openagent e skills 
 ## O Que Está Incluído
 
 - **Plugins**: oh-my-openagent + magic-context (instalados globalmente)
-- **Skills**: Conjunto abrangente de habilidades especializadas organizadas por domínio:
-  - **Laravel & Backend**: `laravel-saas`, `laravel-inertia-react`, `api-rest`, `eloquent-queries`, `filament-admin`, `pest-testing`, `redis-queue`, `reverb-websocket`, `security-audit`, `perf-optimizer`, `api-documentation`
-  - **Browser & Automação**: `agent-browser`, `agentcore`, `dogfood`, `electron`, `slack`, `vercel-sandbox`
+- **Skills**: Conjunto de habilidades especializadas organizadas por domínio:
+  - **Laravel & Backend**: `laravel-saas`, `api-rest`, `eloquent-queries`, `filament-admin`, `pest-testing`, `redis-queue`, `reverb-websocket`, `security-audit`, `perf-optimizer`, `api-documentation`
+  - **Browser & Automação**: `agent-browser`, `dogfood`, `slack`
   - **Frontend & UI**: `modern-ui-ux`, `css-master`
   - **Infra & DB**: `docker-dev`, `database-pgsql`
-  - **Workflow & Agentes**: `context-master`, `memory-helper`, `review-work`, `skill-creator`, `git-ops`, `stack-advisor`
+  - **Workflow & Agentes**: `context-master`, `memory-helper`, `review-work`, `skill-creator`, `git-ops`
 - **Configuração de Agentes**: Sisyphus (orquestrador principal), Oracle, Prometheus, Metis, Momus
 
 ## Estrutura Real
@@ -25,33 +25,30 @@ my-config-opencode/
     ├── magic-context.jsonc       # Configuração do magic-context
     ├── .gitignore                 # Ignora package.json, node_modules
     └── skills/                    # Habilidades especializadas
-        ├── security-audit/           # Auditoria de segurança e OWASP
-        ├── perf-optimizer/            # Otimização de performance Laravel/Postgres
-        ├── api-documentation/         # Documentação OpenAPI/Swagger
         ├── agent-browser/            # Automação de navegador via CDP
-        ├── agentcore/                # Browser em nuvem (AWS Bedrock)
+        ├── api-documentation/         # Documentação OpenAPI/Swagger
         ├── api-rest/                 # Especialista em APIs REST/Laravel
         ├── context-master/           # Gestão de contexto avançada
         ├── css-master/               # Especialista em CSS/Styling
         ├── database-pgsql/           # Otimização e queries PostgreSQL
         ├── docker-dev/               # Orquestração e Docker
         ├── dogfood/                  # QA e testes exploratórios
-        ├── electron/                 # Automação de apps Electron
         ├── eloquent-queries/         # Otimização de queries Eloquent
         ├── filament-admin/           # Especialista em FilamentPHP
         ├── git-ops/                  # Fluxos avançados de Git
-        ├── laravel-inertia-react/    # Stack TALL/Inertia
+        ├── laravel-arch-expert/      # Arquitetura Laravel
         ├── laravel-saas/             # Padrões de arquitetura SaaS
+        ├── livewire-master/          # Especialista Livewire
         ├── memory-helper/            # Gestão de memória de longo prazo
         ├── modern-ui-ux/             # Design e UX moderno
+        ├── perf-optimizer/           # Otimização de performance
         ├── pest-testing/             # Testes com Pest PHP
         ├── redis-queue/              # Filas e Cache com Redis
         ├── reverb-websocket/         # WebSockets com Laravel Reverb
         ├── review-work/              # Revisão técnica de código
+        ├── security-audit/           # Auditoria de segurança e OWASP
         ├── skill-creator/            # Criação de novas skills
-        ├── slack/                    # Automação de Slack
-        ├── stack-advisor/            # Consultoria de stack tecnológica
-        └── vercel-sandbox/           # Automação em Vercel Sandbox
+        └── slack/                    # Automação de Slack
 ```
 
 ## Como Instalar e Configurar
