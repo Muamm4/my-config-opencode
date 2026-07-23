@@ -1,9 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "compaction": {
-    "auto": true,
-    "prune": true
+    "auto": false,
+    "prune": false
   },
+  "default_agent": "sisyphus",
+  "model": "opencode/deepseek-v4-flash-free",
   "plugin": [
     "oh-my-openagent@latest",
     "@cortexkit/opencode-magic-context@latest"

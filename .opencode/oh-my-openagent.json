@@ -38,7 +38,7 @@
             "reasoningEffort": "high"
         },
         "oracle": {
-            "model": "google/gemma-4-31b-it",
+            "model": "opencode/deepseek-v4-flash-free",
             "fallback_models": [
                 "opencode/deepseek-v4-flash-free",
                 "opencode/nemotron-3-super-free"
@@ -73,7 +73,7 @@
             "temperature": 0.3
         },
         "momus": {
-            "model": "google/gemma-4-31b-it",
+            "model": "opencode/deepseek-v4-flash-free",
             "fallback_models": [
                 "opencode/deepseek-v4-flash-free",
                 "opencode/nemotron-3-super-free"
